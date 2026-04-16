@@ -1,5 +1,5 @@
 
-![](image/13.png)
+![](image/13.png)<br>
 D是mini_batch?
 BatchNorm是对每个feature做均值
 ![](image/14.png)
