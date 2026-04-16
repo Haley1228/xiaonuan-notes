@@ -2,10 +2,10 @@
 ![](image/13.png)<br>
 D是mini_batch?
 BatchNorm是对每个feature做均值
-![](image/14.png)
+![](image/14.png)<br>
 对于三维的话，每个sequence有n个特征
 对每个sequence的同一特征做均值
-![](image/15.png)
+![](image/15.png)<br>
 ## LayerNorm
  另一种广泛应用于深度学习的归一化技术。与 Batch Normalization（BN）不同，LayerNorm 不依赖于 mini-batch 的统计信息，而是对==单个样本在所有特征维度上进行归一化==。它的归一化对象是一个样本内部的所有特征，**而不是一个批次（batch）中所有样本的同一个特征**
  - 独立于批次大小
