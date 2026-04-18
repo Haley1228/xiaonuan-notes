@@ -74,8 +74,32 @@
 
 
 **总结：不用 BN，主要是因为 BN 依赖 batch 统计，小 batch 和序列建模时不稳定；LN 只看单个样本自身特征，更适合 Transformer / ViT。**
+# 主流程代码
 
+```python
+def forward(self, img):
 
+        x = self.to_patch_embedding(img) ## img 1 3 224 224  输出形状x : 1 196 1024
+        b, n, _ = x.shape ##
+        cls_tokens = repeat(self.cls_token, '() n d -> b n d', b = b)
+        x = torch.cat((cls_tokens, x), dim=1)
+        x += self.pos_embedding[:, :(n + 1)] #5.位置编码
+        x = self.dropout(x) #6.dropout防止过拟合
+        x = self.transformer(x)
+        x = x.mean(dim = 1) if self.pool == 'mean' else x[:, 0]
+        x = self.to_latent(x)
+        return self.mlp_head(x)
+```
 
+1.  把输入图片切成 patch，并把每个 patch 映射成 `1024` 维 token
+`224x224`、`16x16` patch 时，一共 `14x14=196` 个 patch，所以得到 `x.shape = (1, 196, 1024)`
+2. b=batch size =1 n=patch数量=196
+3. `cls_tokens = repeat(...)`  把一个可学习的 `cls token` 复制成每张图都对应一个  
+形状从 `(1,1,1024)` 变成 `(b,1,1024)`**ViT中一个batch可能有多张图片，每张图片都要有一个cls**
+4. `x = torch.cat((cls_tokens, x), dim=1)`  
+把 `cls token` 拼到最前面。  
+所以序列长度从 `196` 变成 `197`，形状变成 `(1, 197, 1024)`
 
+最后，`x = x.mean(dim = 1) if self.pool == 'mean' else x[:, 0]`分类是每张图压缩成一个1024维的向量供分类使用，*197 个 token 里，拿谁来代表整张图？*
 
+取每张图的第 0 个 token 也就是cls，或者对所有 token 求平均
