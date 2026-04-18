@@ -50,5 +50,11 @@
 **具体实现**：
 可以理解为将原有的 $N_{old}$个位置编码（从 $(H_{old}/P) \times (W_{old}/P)$ 网格）“拉伸”或“重新采样”到新的 ($H_{new}/P) \times (W_{new}/P)$ 网格中。如果新的网格点落在旧网格点之间，则通过**插值**（例如双线性插值 bilinear interpolation)来计算新的位置编码向量
 
+## 7.Layer Normalization
+
+
+
+
+
 
 
