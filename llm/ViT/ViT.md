@@ -101,5 +101,4 @@ def forward(self, img):
 所以序列长度从 `196` 变成 `197`，形状变成 `(1, 197, 1024)`
 
 最后，`x = x.mean(dim = 1) if self.pool == 'mean' else x[:, 0]`分类是每张图压缩成一个1024维的向量供分类使用，*197 个 token 里，拿谁来代表整张图？*
-
 取每张图的第 0 个 token 也就是cls，或者对所有 token 求平均
