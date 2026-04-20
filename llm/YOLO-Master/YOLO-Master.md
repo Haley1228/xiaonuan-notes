@@ -107,3 +107,9 @@ y_i = FFN_i(x_i)
 - 一个轻量级动态路由网络在训练过程中，通过一个提升多样性的目标，指导专家专业化，鼓励专家之间互补的专业知识 **也就是让专家分化**
 - 
 
+# 2.主要思想
+
+![MoE](image/frame.png)
+ 1. Backbone负责特征提取。图中显示 ES-MoE 被插入其中，用于在提取阶段根据目标的尺度和场景复杂度动态增强特征;<br> Neck负责特征融合（如 P3、P4、P5 层),在这里，ES-MoE 能够实现自适应的多尺度信息精炼<br> Head最终的输出层，用于预测物体的类别和边界框
+ 2. **ES-MoE**<br> **Input Feature:输入特征图<br> Dynamic Routing Network:动态路由网络，它决定了哪些“专家”应该被激活<br> Softmax Gating:通过 Softmax 函数计算每个专家的权重<br> Expert Group:一组独立的子网络。每个专家使用不同卷积核大小（如 3x3, 5x5, 7x7）的 Depthwise Separable Convolution (DWconv)，以覆盖不同的感受野**
+ ****
