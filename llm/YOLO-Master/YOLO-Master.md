@@ -8,7 +8,9 @@ data: 2026-04-20
 - 选top-k ,加权输出$y=g2​⋅Expert2​(x)+g4​⋅Expert4​(x)$
 - **没有人工标签告诉Gate该选谁，完全通过loss误差反向传播**
 ![MoE](image/MoE.png)
+
 - x1,x2两个token，加positional embedding 进入self-attention
+
 ```python
  import torch
 import torch.nn as nn
@@ -82,6 +84,23 @@ class MoE(nn.Module):
         return output
 ```
 
+## 计算方式
+
+```
+所有 token 一起算 gate  
+→ 一次性分组  
+→ 每个专家并行处理一批 token
+
+token按专家分组
+专家0: 300个token  
+专家1: 260个token  
+专家2: 280个token
+
+专家并行计算
+for each expert:  
+y_i = FFN_i(x_i)
+
+```
 # 1.POINT
 
 - 为每个输入根据其场景复杂度动态分配计算资源
