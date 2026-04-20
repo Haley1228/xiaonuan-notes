@@ -111,5 +111,14 @@ y_i = FFN_i(x_i)
 
 ![MoE](image/frame.png)
  1. Backbone负责特征提取。图中显示 ES-MoE 被插入其中，用于在提取阶段根据目标的尺度和场景复杂度动态增强特征;<br> Neck负责特征融合（如 P3、P4、P5 层),在这里，ES-MoE 能够实现自适应的多尺度信息精炼<br> Head最终的输出层，用于预测物体的类别和边界框
- 2. **ES-MoE**<br> **Input Feature:输入特征图<br> Dynamic Routing Network:动态路由网络，它决定了哪些“专家”应该被激活<br> Softmax Gating:通过 Softmax 函数计算每个专家的权重<br> Expert Group:一组独立的子网络。每个专家使用不同卷积核大小（如 3x3, 5x5, 7x7）的 Depthwise Separable Convolution (DWconv)，以覆盖不同的感受野**
- ****
+ 
+ 2. **ES-MoE**<br> Input Feature:输入特征图<br> Dynamic Routing Network:动态路由网络，它决定了哪些“专家”应该被激活<br> Softmax Gating:通过 Softmax 函数计算每个专家的权重<br> Expert Group:一组独立的子网络。每个专家使用不同卷积核大小（如 3x3, 5x5, 7x7）的    Depthwise Separable Convolution (DWconv)，以覆盖不同的感受野<br> Top-K Selection (K=2): 从n个专家中只选出权重最高的2个,这种稀疏激活机制是保持实时性的关键。<br> Weighted Aggregation: 将选定专家的输出进行加权融合
+ 
+ 3. 分阶段路由策略<br> 为了平衡训练效果和推理速度，Dynamic Routing Network 采用了不同的决策逻辑：
+- Soft Top-K (训练阶段): 保持所有专家的梯度流。即使只有 Top-K 专家起主要作用，其他专家也能获得更新，防止“专家崩溃”（即某些专家从未被训练）。
+- Hard Top-K (推理阶段): 严格只运行选中的K 专家。这在硬件部署时能显著减少计算量（FLOPs）并降低延迟。
+- Standard (Softmax): 基础的全量加权模式。
+
+**YOLO-Master 通过这种设计打破了传统 YOLO 的“静态密集计算”限制。简单场景下它可能激活较小的卷积专家，而复杂场景下则调用感受野更大的专家，从而在不增加平均延迟的前提下提升了检测精度，特别是在密集小目标场景（如 VisDrone 数据集）中表现优异。**
+
+ 
