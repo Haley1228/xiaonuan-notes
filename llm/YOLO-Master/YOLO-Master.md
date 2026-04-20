@@ -4,8 +4,8 @@ data: 2026-04-20
 # 0.浅谈一下MoE
 
 - Gate 为可学习的分类器，给每个专家一个概率
-输入是当前 token 表示 x，输出是每个专家的分数：$g=softmax(Wx)$
-- 选top-k ,加权输出$y=g2​⋅Expert2​(x)+g4​⋅Expert4​(x)$
+输入是当前 token 表示 x，输出是每个专家的分数：g=softmax(Wx)
+- 选top-k ,加权输出y=g2​⋅Expert2​(x)+g4​⋅Expert4​(x)
 - **没有人工标签告诉Gate该选谁，完全通过loss误差反向传播**
 ![MoE](image/MoE.png)
 
