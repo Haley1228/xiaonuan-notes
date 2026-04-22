@@ -147,4 +147,7 @@ YOLO−Master 的ES-MoE专家组配置了{3,5,7,…} 等不同尺寸的深度可
 
 ### Soft Top-K
 
+#### 为什么看起来是“只激活 K 个专家”但又保持梯度流动？
+![MoE](image/softtop.png)
+
 
