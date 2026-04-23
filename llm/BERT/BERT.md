@@ -14,7 +14,7 @@
 # 基本思想
 
 ## 1.输入
-![figure 2](image/2.png)
+![figure 2](llm/BERT/image/2.png)
 
 **Input**：这是 BERT 模型接收的原始文本序列。
 图中显示了一个包含两个句子的示例：“my dog is cute” 和 “he likes playing”。
