@@ -3,7 +3,7 @@
 
 *RNN & transformer where the linguistic rules are learned implicitly within a coupled mode*
 
-所谓“隐式学习”（implicit learning）就是把 vision model (VM) 和 language model (LM) 放在同一个端到端网络里，语言知识不是单独建模成一个独立的语言模块，而是通过联合训练让解码器（通常是 RNN 或 Transformer decoder）在映射视觉特征到字符序列的过程中“顺带学会”语言统计和约束。可见[编码器解码器](零星.md#2什么时候用编码器解码器encoderdecoder)
+所谓“隐式学习”（implicit learning）就是把 vision model (VM) 和 language model (LM) 放在同一个端到端网络里，语言知识不是单独建模成一个独立的语言模块，而是通过联合训练让解码器（通常是 RNN 或 Transformer decoder）在映射视觉特征到字符序列的过程中“顺带学会”语言统计和约束。可见[编码器解码器](../零星.md)
 
 *论文指出这一类方法把语言规律藏在耦合的模型内部，具体学到了什么、好坏如何无法直接观测或控制*
 - 可解释性差：无法单独评估或理解 LM 学到了哪些语言先验，难以诊断错误来源（是视觉弱还是语言弱）。
