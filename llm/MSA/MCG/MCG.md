@@ -42,3 +42,6 @@ Barcelona Crowned 2016 La Liga Champions, Suarez Sink... \<s> Suarez **positive*
 - 这篇论文重点解决的是一个句子中有多个方面和多种情感的情况 。
 - 在这个例子中，"Suarez" 实际上是负面的，但句子前面有 "Crowned" 和 "Champions" 这种极具误导性的正面词。
 - 冗余的作用： 如果不把完整的文本 T喂进去，模型就无法学会在干扰信息（正面词汇）极多的情况下，依然能精准地将“Suarez”与“negative”对齐。**冗余的上下文正是模型需要学习去“过滤”或“正确关联”的噪声。**
+# 4.多跳连接情感依赖图
+
+首先使用 spaCy1 library 获取句法依赖树，并将其转换为一个无向图 G
