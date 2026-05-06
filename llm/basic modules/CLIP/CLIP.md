@@ -16,7 +16,7 @@
 
 # 1.流程图
 
-![公式](llm/CLIP/image/1.png)
+![公式](llm/basic%20modules/CLIP/image/1.png)
 图中左侧矩阵，正样本就是对角线上的匹配数据对$n$,负样本就是$n^2-n$个
 
 
@@ -47,7 +47,7 @@
 
 # 2.伪代码解析
 
-![公式|500](llm/CLIP/image/3.png)
+![公式|500](llm/basic%20modules/CLIP/image/3.png)
 ## 1）输入
 
 **图像编码器**: 它接收批次中的所有 N 张图像，并为每张图像生成一个向量表示（图像嵌入）。我们把这 N 个图像嵌入放在一个矩阵里，称为 $I_e$，它的形状大概是 ``[N, embedding_dim]``
