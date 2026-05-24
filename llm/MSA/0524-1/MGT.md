@@ -26,11 +26,16 @@ data: 2026-05-24
 - 防止非语言模态的噪声模注入到模型中
 - 非语言模态作为辅助模态帮助模型更好的理解人类多模态的语言
 
-# 2.痛点
+# 2.痛点+涉及的方面
 
 1. “注意力+融合模块”这种顺序结构，融合模块永远被考虑其中，难以避免非语言模态的噪音与无辨别能力的信息融入到模型中
-2. 
+2. 现存的以语言模型为主导的多模态方法不关注非语言模态的判别能力
+3. 现有的方法通常直接将非语言和语言模态信息在输入层与融合层进行连接
+4. 以文本语言为主导的多模态分析模型
+5. **对比学习** 对齐多模态
 # 3.写作借鉴
+
+## related work
 
 MSA，aiming to effectively integrate information from acoustic,
 spoken language, and visual expressions for the analysis of
@@ -38,3 +43,22 @@ sentiment intensity, opinion tendency, and emotional state, is
 a promising area of multimodal machine learning and has great
 application potential.
 旨在有效整合来自声学、口语和视觉表达的信息，用于分析情感强度、观点倾向和情绪状态，这是一个有前景的多模态机器学习领域，并具有巨大的应用潜力。
+
+### MSA
+
+- 提出有效的方法来建模跨模态交互
+- 应用注意力机制的融合方法
+    - 情感知识增强注意力融合网络
+- 噪声模态问题
+    - 门控机制
+    - T2FN 时序张量融合网络
+- 减小模态间隙问题
+    - 对抗表示的图融合：对抗学习学习一个共同的特征空间，减小特征空间中模态间的分布差异
+    - MISA 子空间特征 减小模态间的分布差距 解耦单模态特征
+    - 通用与私有编码器
+- 对比学习 缓解多模态之间的异质性
+### Fine-Tuning PLMs With Multimodal Data
+
+- 得益于BERT的发展
+- 提示学习
+- 顺序多模态融合层
