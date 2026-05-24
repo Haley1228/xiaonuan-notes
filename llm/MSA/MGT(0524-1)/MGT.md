@@ -76,5 +76,8 @@ application potential.
 - X=FFN（X’+Xl）表示融合后的信息
 - 门控机制
     - sigmoid函数 计算源文本向量Xl与融合向量X的相似性与影响力，表示为权重w
-    - 更新融合向量X=X\*w
+    - 更新融合向量X=X\*w，其中的，w 可以被理解为“X 与每个语言 token（Xl 对应时间步）之间的相容性/有用性” 的一种可学习、软化的度量
 - 最终的以文本为主导的向量Xl=Xl+X
+## loss创新
+
+macth
