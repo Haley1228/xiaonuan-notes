@@ -45,5 +45,3 @@ SDRS 框架在两个方面与这些方法显著不同：情感特定表示被显
 ## 1.overview
 ## 2.CAEE
 ![CAEE](image/CAEE.png)
-1. 两个粗粒度编码器 语义编码器与情感编码器Semantics encoder与Sentiment encoder
-2. Semantics encoder输入为原始非语言特征Xm，抽取与情感无关或极为通用的
