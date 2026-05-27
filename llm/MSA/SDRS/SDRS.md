@@ -43,5 +43,8 @@ SDRS 框架在两个方面与这些方法显著不同：情感特定表示被显
 
 # 3.Method
 ## 1.overview
+
 ## 2.CAEE
 ![CAEE](image/CAEE.png)
+ ![CAEE](image/1.png)
+ ![CAEE](image/2.png)

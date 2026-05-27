@@ -24,7 +24,7 @@ data: 2026-05-24
 2. y=1的样本 为agreement，y=-1的样本 为disareement
 3. agreement采用SCA情感选择性注意力机制，disareement采用SSA情感共性注意力机制
 4. 具体如下：
-![](image/2.png)
+![](llm/MSA/TriagedMSA/image/2.png)
 - **三个模态说的是同一种情感**，用SCA找共性
     - 以**文本为主导**
     - 让音频、视觉跟着文本对齐
