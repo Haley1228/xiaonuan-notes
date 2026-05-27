@@ -9,6 +9,18 @@ tags:
 
 1. 三元对称（两两模态双向关系建模）与基于文本为中心的方法[[KuDA#*亮点]]
 2. 对比学习
+# 3.方法论
+
+## 1.Encoder and Adapter
+
+![](image/1.png)
+
+- Transformer Encoder 是普通的 encoder 堆叠（**多层自注意力 + 前馈网络**），它输入原始模态特征，每层输出传递到下一层，最终得到**全局语义表示 Hm**（通常取最后一层或汇聚后的输出）
+    - Hm->global sentic representation 全局语义表示，模态的通用信息 ，不专门针对情感知识注入。
+- Adapter 被“插接”到 Transformer 的中间层（图中箭头指出 Adapter 接收自 Transformer 的若干中间层输出作为输入），**注入或增强特定知识**
+    - 输出为Km，知识情感表示
+    通过把 Adapter 接到多个（但不是全部）Transformer 层，**模型能在不同深度引入情感线索**
+    
 # \*亮点
 
 1. Introduction中的关于三元对称法与以文本主导方法的概述
