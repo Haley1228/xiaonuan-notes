@@ -20,7 +20,13 @@ tags:
 - Adapter 被“插接”到 Transformer 的中间层（图中箭头指出 Adapter 接收自 Transformer 的若干中间层输出作为输入），**注入或增强特定知识**
     - 输出为Km，知识情感表示
     通过把 Adapter 接到多个（但不是全部）Transformer 层，**模型能在不同深度引入情感线索**
-    
+# 2.overview
+ ![](image/2.png)
+ 
+
+# 3. Dynamic AttentionFusion
+![](image/3.png)
+
 # \*亮点
 
 1. Introduction中的关于三元对称法与以文本主导方法的概述
