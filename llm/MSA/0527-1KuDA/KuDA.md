@@ -13,7 +13,7 @@ tags:
 
 ## 1.Encoder and Adapter
 
-![](image/1.png)
+![](llm/MSA/0527-1KuDA/image/1.png)
 
 - Transformer Encoder 是普通的 encoder 堆叠（**多层自注意力 + 前馈网络**），它输入原始模态特征，每层输出传递到下一层，最终得到**全局语义表示 Hm**（通常取最后一层或汇聚后的输出）
     - Hm->global sentic representation 全局语义表示，模态的通用信息 ，不专门针对情感知识注入。
@@ -21,7 +21,7 @@ tags:
     - 输出为Km，知识情感表示
     通过把 Adapter 接到多个（但不是全部）Transformer 层，**模型能在不同深度引入情感线索**
 # 2.overview
- ![](image/2.png)
+ ![](llm/MSA/0527-1KuDA/image/2.png)
  
 
 # 3. Dynamic AttentionFusion

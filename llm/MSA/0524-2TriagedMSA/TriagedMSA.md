@@ -19,12 +19,12 @@ data: 2026-05-24
     - MUTA判别性多关系表示学习
 - 注意力机制
 # 3.Method
-![](llm/MSA/TriagedMSA/image/1.png)
+![](llm/MSA/0524-2TriagedMSA/image/1.png)
 1. 预测标注极性 每个模态表示的极性不同时，则y=-1，一样y=1
 2. y=1的样本 为agreement，y=-1的样本 为disareement
 3. agreement采用SCA情感选择性注意力机制，disareement采用SSA情感共性注意力机制
 4. 具体如下：
-![](llm/MSA/TriagedMSA/image/2.png)
+![](llm/MSA/0524-2TriagedMSA/image/2.png)
 - **三个模态说的是同一种情感**，用SCA找共性
     - 以**文本为主导**
     - 让音频、视觉跟着文本对齐
