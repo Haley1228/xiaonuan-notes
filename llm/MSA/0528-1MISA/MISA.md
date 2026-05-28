@@ -19,7 +19,11 @@ data: 2026-05-28
 - **共享-私有表示**
 # 3.方法论
 
-![](image/1.png)
-![](image/2.png)
+## overview
+![](llm/MSA/0528-1MISA/image/3.png)
+## details
+
+![](llm/MSA/0528-1MISA/image/1.png)
+![](llm/MSA/0528-1MISA/image/2.png)
 
 
