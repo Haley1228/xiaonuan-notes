@@ -9,3 +9,7 @@ data: 2026-06-05
 # 2.相关工作
 
 1. 深度学习中的信息瓶颈
+
+# 3.Method
+
+再次只做Attention Bottleneck Fusion的介绍
