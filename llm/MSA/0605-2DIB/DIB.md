@@ -11,5 +11,6 @@ data: 2026-06-05
 1. 深度学习中的信息瓶颈
 
 # 3.Method
+在此只做Attention Bottleneck Fusion的介绍
+![](image/1.png)
 
-再次只做Attention Bottleneck Fusion的介绍
