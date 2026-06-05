@@ -22,7 +22,7 @@ MICA在模态共有空间学习跨模态交互信息，在这个空间可以有�
 1. 多模态序列融合
 # 方法论
 ## overview
-![](image/2.png)
+![](llm/MSA/0528-2MICA/image/2.png)
 
 # 🌟分布对齐机制（loss设计）
 
