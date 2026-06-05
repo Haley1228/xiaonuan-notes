@@ -12,3 +12,15 @@ data: 2026-06-05
 
 🌟模态竞争
 现有方法大多通过非直接信号例如梯度范数或损失来约束主导模态对较弱模态的压制，缺乏对每个模态贡献的原则性量化
+
+
+# 3.Method
+
+1. 针对主导模态会掩盖较弱模态，导致阻碍有效融合并降低整体性能，✅**采用原型引导的模态内的对齐校准**
+2. 针对模态间固有的分布的异质性，✅**采用跨膜态熵最优传输对齐**
+
+
+## 具体细节
+
+>The alignment objective is to minimize the transportation cost between the two distributions
+
