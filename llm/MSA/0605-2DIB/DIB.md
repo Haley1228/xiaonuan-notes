@@ -11,6 +11,15 @@ data: 2026-06-05
 1. 深度学习中的信息瓶颈
 
 # 3.Method
-在此只做Attention Bottleneck Fusion的介绍
+
+在此只做**Attention Bottleneck Fusion**的介绍
 ![](image/1.png)
+- $U_0=concat[Z_t,Z_a,Z_v]$作为第一个CA的key和value，得到的结果为$B_{l+1}$，$B_l$作为query，B为聚合全部跨模态关键信息的瓶颈向量，维度远小于特征向量
+- $B_{l+1}$作为第二个CA的Key 和 Value，各模态的特征向量为query，更新后的瓶颈再把整合后的共享互补信息反向回传给各个单模态
+- $Z_{l+1}^m=Z_{l}^m+r^mCM(B_{l+1},Z_l^m)$
+1. 抑制噪声
+2. 减少冗余
+3. 计算高效
+
+
 
