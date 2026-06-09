@@ -36,6 +36,6 @@ data: 2026-06-09
 - 关于最后一层，只做第一层次的CA，然后拼接
 ## 4.loss设计
 
-- 主要还是针对Mselector的loss设计
+- 主要还是针对**Mselector**的loss设计
  ![](image/loss1.png)
 ![](image/loss2.png)
