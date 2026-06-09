@@ -34,4 +34,8 @@ data: 2026-06-09
     4. 三个向量拼接
     5. 非主要模态做query，融合全局向量做key &value，此时得到带有全全局融合向量的关于非主要模态的特征表示
 - 关于最后一层，只做第一层次的CA，然后拼接
- ![](image/l.png)
+## 4.loss设计
+
+- 主要还是针对Mselector的loss设计
+ ![](image/loss1.png)
+![](image/loss2.png)
