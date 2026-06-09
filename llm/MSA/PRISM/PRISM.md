@@ -88,7 +88,7 @@ data: 2026-05-03
 ## 5.学习目标
 
 1. 情感预测损失 最小化均方误差
-![](image/loss1.png)
+![](llm/MSA/PRISM/image/loss1.png)
 2. 原型信息量辅助损失
  ![](image/loss2.png)
  3. 原型多样性正则化
