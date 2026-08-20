@@ -27,7 +27,7 @@ tags:
 # 3. Dynamic AttentionFusion
 ![](llm/MSA/0527-1KuDA/image/3.png)
  ![](llm/MSA/0527-1KuDA/image/4.png)
- ![](image/6.png)
+ ![](llm/MSA/0527-1KuDA/image/6.png)
 
 # \*亮点
 
